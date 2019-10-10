@@ -8,21 +8,21 @@ describe('Calculator', ()=>{
     let wrapper;
     beforeEach(()=> wrapper = shallow(<Calculator />))
 
-    it('renders a div', ()=>{
+    it('renders correctly based on snapshot', () => {
+        expect(wrapper).toMatchSnapshot()
+    })
+
+    it('renders a div', ()=> {
         expect(wrapper.find('div').length).toEqual(1);
     })
 
-    it('renders the Display component', () => {
-        expect(wrapper.containsMatchingElement(<Display displayValue={wrapper.instance().state.displayValue}/>)).toEqual(true);
-    })
-
-    it('renders the Keypad component', () => {
-        expect(wrapper.containsMatchingElement(<Keypad
+    it('renders the Display and Keypad components', () => {
+        expect(wrapper.containsAllMatchingElements([<Display displayValue={wrapper.instance().state.displayValue}/>, <Keypad
             callOperator={wrapper.instance().callOperator}
             numbers={wrapper.instance().state.numbers}
             operators={wrapper.instance().state.operators}
             setOperator={wrapper.instance().setOperator}
             updateDisplay={wrapper.instance().updateDisplay}
-        />)).toEqual(true);
+        />])).toEqual(true);
     })
 })
