@@ -7,7 +7,7 @@ describe('App', ()=>{
     let wrapper;
     beforeEach(()=> wrapper = shallow(<App />));
 
-    it('this test will pass', ()=> expect(true).toBeTruthy() )
+    it('this test will pass', expect(true).toBeTruthy);
 
     it('renders correctly with Snapshot', () => expect(wrapper).toMatchSnapshot());
 

@@ -4,12 +4,12 @@ import Calculator from './Calculator';
 import Display from '../Display/Display';
 import Keypad from '../Keypad/Keypad';
 
-describe('Calculator', ()=>{
+describe('Calculator', () => {
     let wrapper;
     beforeEach(()=> wrapper = shallow(<Calculator />))
 
     it('renders correctly based on snapshot', () => {
-        expect(wrapper).toMatchSnapshot()
+        expect(wrapper).toMatchSnapshot();
     })
 
     it('renders a div', ()=> {

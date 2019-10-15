@@ -5,7 +5,7 @@ import './Display.css';
 const Display = ( {displayValue} ) => {
   return (
       <div className='display-container'>
-          {displayValue}
+          <p className='display-value'>{displayValue}</p>
       </div>
   )
 }
